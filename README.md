@@ -5,7 +5,7 @@ This Flutter application showcases a portfolio with both light and dark themes, 
 
 # skills_app
 
-portfoilo
+portfolio
 
 ## Getting Started
 

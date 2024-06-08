@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:skills_app/core/localization/app_localizations.dart';
 import 'package:skills_app/core/routes/routes.dart';
-import 'package:skills_app/screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -75,10 +73,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Portfolio App',
       theme: ThemeData(
+        primaryColor: Colors.black,
         primarySwatch: Colors.blue,
         brightness: Brightness.light,
       ),
       darkTheme: ThemeData(
+        primaryColor: Colors.black,
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
       ),
