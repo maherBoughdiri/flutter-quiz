@@ -27,7 +27,8 @@ class _NavigationCardsWidgetState extends State<NavigationCardsWidget> {
           return _buildCard(
             context,
             icon: _navigationItems[index].icon,
-            label: AppLocalizations.of(context).translate(_navigationItems[index].labelKey),
+            label: AppLocalizations.of(context)
+                .translate(_navigationItems[index].labelKey),
             routeName: _navigationItems[index].routeName,
           );
         },
@@ -35,7 +36,10 @@ class _NavigationCardsWidgetState extends State<NavigationCardsWidget> {
     );
   }
 
-  Widget _buildCard(BuildContext context, {required IconData icon, required String label, required String routeName}) {
+  Widget _buildCard(BuildContext context,
+      {required IconData icon,
+      required String label,
+      required String routeName}) {
     return Card(
       margin: EdgeInsets.symmetric(vertical: 8.0),
       child: Container(
@@ -78,24 +82,40 @@ class NavigationItem {
   final String labelKey;
   final String routeName;
 
-  NavigationItem({required this.icon, required this.labelKey, required this.routeName});
+  NavigationItem(
+      {required this.icon, required this.labelKey, required this.routeName});
 }
 
 final List<NavigationItem> _navigationItems = [
   NavigationItem(
-    icon: Icons.info,
-    labelKey: 'go_to_about',
-    routeName: '/about',
+    icon: Icons.person,
+    labelKey: 'personal_information',
+    routeName: '/personal_information',
   ),
   NavigationItem(
     icon: Icons.school,
-    labelKey: 'go_to_skills',
-    routeName: '/skills',
+    labelKey: 'education',
+    routeName: '/education',
   ),
   NavigationItem(
     icon: Icons.work,
-    labelKey: 'go_to_work',
-    routeName: '/work',
+    labelKey: 'professional_experience',
+    routeName: '/professional_experience',
+  ),
+  NavigationItem(
+    icon: Icons.location_on,
+    labelKey: 'professional_address',
+    routeName: '/professional_address',
+  ),
+  NavigationItem(
+    icon: Icons.star,
+    labelKey: 'skills_certifications',
+    routeName: '/skills_certifications',
+  ),
+  NavigationItem(
+    icon: Icons.portrait,
+    labelKey: 'portfolio',
+    routeName: '/portfolio',
   ),
   // Add more items as needed
 ];

@@ -5,5 +5,11 @@
   "go_to_skills": "Aller à la page des compétences",
   "go_to_work": "Aller à ma page de travail",
   "welcome": "Bienvenue dans mon portfolio",
-  "discover": "Découvrez mes compétences, projets et plus encore."
+  "discover": "Découvrez mes compétences, projets et plus encore.",
+  "personal_information": "Informations Personnelles",
+  "education": "Éducation",
+  "professional_experience": "Expériences Professionnelles",
+  "professional_address": "Adresse Professionnelle",
+  "skills_certifications": "Compétences et Certifications",
+  "portfolio": "Portfolio"
 }

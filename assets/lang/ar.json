@@ -5,5 +5,11 @@
   "go_to_skills": "انتقل إلى صفحة المهارات",
   "go_to_work": "انتقل إلى صفحة عملي",
   "welcome": "مرحبًا بك في محفظتي",
-  "discover": "اكتشف مهاراتي ومشاريعي والمزيد."
+  "discover": "اكتشف مهاراتي ومشاريعي والمزيد.",
+  "personal_information": "المعلومات الشخصية",
+  "education": "التعليم",
+  "professional_experience": "الخبرات العملية",
+  "professional_address": "العنوان المهني",
+  "skills_certifications": "المهارات والشهادات",
+  "portfolio": "المعرض"
 }
