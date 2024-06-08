@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class PersonalInformationScreen extends StatelessWidget {
+class SkillsCertificationsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Personal Information'),
+        title: Text('Skills & Certifications'),
       ),
       body: Center(
-        child: Text('This is the personal information page.'),
+        child: Text('This is the skills and certifications page.'),
       ),
     );
   }
