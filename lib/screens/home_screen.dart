@@ -13,14 +13,35 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).translate('title')),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).primaryColor.withOpacity(0.8),
+                Color(0xFFFCA311).withOpacity(0.8),
+              ],
+              begin: Alignment.bottomLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        title: Text(
+          AppLocalizations.of(context).translate('title'),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.brightness_6),
             onPressed: toggleTheme,
+            color: Colors.white,
           ),
           PopupMenuButton<String>(
             onSelected: changeLanguage,
+            icon: Icon(Icons.language, color: Colors.white),
             itemBuilder: (BuildContext context) {
               return [
                 PopupMenuItem(
@@ -50,5 +71,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -1,5 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:skills_app/constants/localisation.constant.dart';
 import 'package:skills_app/core/localization/app_localizations.dart';
+import 'package:skills_app/widgets/home_widgets/title_section.widget.dart';
 
 class NavigationCardsWidget extends StatefulWidget {
   const NavigationCardsWidget({super.key});
@@ -11,28 +15,41 @@ class NavigationCardsWidget extends StatefulWidget {
 class _NavigationCardsWidgetState extends State<NavigationCardsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16.0),
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Number of items per row
-          childAspectRatio: 1, // Adjust to fit your desired aspect ratio
-          mainAxisSpacing: 16,
-          crossAxisSpacing: 16,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionTitle(
+          title: getTranslate(context, 'navigation_header'),
         ),
-        itemCount: _navigationItems.length,
-        itemBuilder: (context, index) {
-          return _buildCard(
-            context,
-            icon: _navigationItems[index].icon,
-            label: AppLocalizations.of(context)
-                .translate(_navigationItems[index].labelKey),
-            routeName: _navigationItems[index].routeName,
-          );
-        },
-      ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: 16.0,
+            top: 2.0,
+            right: 16.0,
+            bottom: 2.0,
+          ),
+          child: CarouselSlider.builder(
+            options: CarouselOptions(
+              height: 150,
+              aspectRatio: 2.0,
+              viewportFraction: 0.8,
+              enlargeCenterPage: true,
+              scrollDirection: Axis.horizontal,
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 3),
+            ),
+            itemCount: _navigationItems.length,
+            itemBuilder: (context, index, realIdx) {
+              return _buildCard(
+                context,
+                icon: _navigationItems[index].icon,
+                label: getTranslate(context, _navigationItems[index].labelKey),
+                routeName: _navigationItems[index].routeName,
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 
@@ -40,37 +57,52 @@ class _NavigationCardsWidgetState extends State<NavigationCardsWidget> {
       {required IconData icon,
       required String label,
       required String routeName}) {
-    return Card(
-      margin: EdgeInsets.symmetric(vertical: 8.0),
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, routeName);
+      },
+      borderRadius: BorderRadius.circular(16),
       child: Container(
-        padding: EdgeInsets.all(8),
+        width: MediaQuery.of(context).size.width * 0.8,
+        padding: EdgeInsets.all(4),
         decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          borderRadius: BorderRadius.circular(8),
+          gradient: LinearGradient(
+            colors: [
+              Theme.of(context).primaryColor.withOpacity(0.8),
+              Color(0xFFFCA311).withOpacity(0.8),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0, 4),
+              blurRadius: 10,
+            ),
+          ],
         ),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, routeName);
-          },
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                size: 48,
-                color: Colors.white,
-              ),
-              SizedBox(height: 8),
-              Text(
-                label,
-                textAlign: TextAlign.center,
-                style: TextStyle(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: 48,
+              color: Colors.white,
+            ),
+            SizedBox(height: 8),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.pacifico(
+                textStyle: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
