@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:skills_app/core/localization/app_localizations.dart';
+import 'package:skills_app/widgets/home_widgets/contact.widget.dart';
 import 'package:skills_app/widgets/home_widgets/hero_widget.dart';
 import 'package:skills_app/widgets/home_widgets/navigation_cards_widget.dart';
+import 'package:skills_app/widgets/home_widgets/navigation_contact.dart';
 
 class HomeScreen extends StatelessWidget {
   final VoidCallback toggleTheme;
@@ -67,6 +69,8 @@ class HomeScreen extends StatelessWidget {
           children: [
             buildHeroSection(),
             NavigationCardsWidget(),
+            NavigationContactWidget(),
+            // ClickableActionsWidget(),
           ],
         ),
       ),
