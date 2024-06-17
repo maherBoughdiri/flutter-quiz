@@ -12,5 +12,13 @@
   "professional_address": "Professional Address",
   "skills_certifications": "Skills & Certifications",
   "portfolio": "Portfolio",
-  "navigation_header": "Navigation"
+  "navigation_header": "Navigation",
+  "full_address": "Route Aireport Sfax Km 8",
+  "date_of_birth": "Date of Birth",
+  "phone": "Phone",
+  "place_of_birth": "Place of Birth",
+  "place_of_birth_value": "Kasserine, Tunisia",
+  "about_me": "About Me",
+  "about_me_content": "I am Maher Boughdiri, a dedicated Full Stack Developer and Technical Support Specialist. With a strong foundation in both front-end and back-end technologies, I bring creative solutions and technical excellence to every project. My journey in tech started in Tunisia, where I developed a passion for problem-solving and innovative thinking. Today, I leverage my skills to build robust, user-friendly applications and provide top-notch technical support. Whether coding a new feature or troubleshooting an issue, I thrive in dynamic environments and love turning complex challenges into opportunities for growth and learning.",
+  "google_map_placeholder": "Google Map Placeholder"
 }

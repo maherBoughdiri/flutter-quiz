@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -20,8 +21,8 @@ class HomeScreen extends StatelessWidget {
                 Theme.of(context).primaryColor.withOpacity(0.8),
                 Color(0xFFFCA311).withOpacity(0.8),
               ],
-              begin: Alignment.bottomLeft,
-              end: Alignment.bottomRight,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
           ),
         ),

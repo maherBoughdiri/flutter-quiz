@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:skills_app/constants/localisation.constant.dart';
 
 class PersonalInformationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Personal Information'),
+        title: Text(getTranslate(context, 'personal_information')),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
@@ -14,11 +15,11 @@ class PersonalInformationScreen extends StatelessWidget {
             CircleAvatar(
               radius: 60,
               backgroundImage: AssetImage(
-                  'assets/avatar.jpg'), // Replace with your asset image
+                  'assets/images/my_img.jpg'), // Replace with your asset image
             ),
             SizedBox(height: 16.0),
             Text(
-              'John Doe',
+              'Maher Boughdiri',
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
@@ -26,7 +27,7 @@ class PersonalInformationScreen extends StatelessWidget {
             ),
             SizedBox(height: 8.0),
             Text(
-              'john.doe@example.com',
+              'maher.boughdiri@softtodo.com',
               style: TextStyle(
                 fontSize: 16.0,
                 color: Colors.grey[600],
@@ -34,7 +35,7 @@ class PersonalInformationScreen extends StatelessWidget {
             ),
             SizedBox(height: 8.0),
             Text(
-              '1234 Elm Street, Springfield, USA',
+              getTranslate(context, 'full_address'),
               style: TextStyle(
                 fontSize: 16.0,
                 color: Colors.grey[600],
@@ -43,24 +44,20 @@ class PersonalInformationScreen extends StatelessWidget {
             SizedBox(height: 16.0),
             Divider(),
             SizedBox(height: 16.0),
-            _buildInfoRow(Icons.cake, 'Date of Birth', 'January 1, 1990'),
-            _buildInfoRow(Icons.phone, 'Phone', '+1 (555) 555-5555'),
+            _buildInfoRow(Icons.cake, getTranslate(context, 'date_of_birth'),
+                'June 15, 1994'),
             _buildInfoRow(
-                Icons.location_city, 'Place of Birth', 'Springfield, USA'),
+                Icons.phone, getTranslate(context, 'phone'), '25458799'),
+            _buildInfoRow(
+                Icons.location_city,
+                getTranslate(context, 'place_of_birth'),
+                getTranslate(context, 'place_of_birth_value')),
             SizedBox(height: 16.0),
             Divider(),
             SizedBox(height: 16.0),
-            _buildSectionHeader('Professional Address'),
-            _buildGoogleMapPlaceholder(),
-            SizedBox(height: 16.0),
-            Divider(),
-            SizedBox(height: 16.0),
-            _buildSectionHeader('About Me'),
+            _buildSectionHeader(getTranslate(context, 'about_me')),
             Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-              'Praesent bibendum, neque sit amet facilisis malesuada, '
-              'libero velit lacinia dui, a sollicitudin velit justo eu nisl. '
-              'Maecenas interdum sapien nec arcu suscipit ultricies.',
+              getTranslate(context, 'about_me_content'),
               style: TextStyle(fontSize: 16.0),
               textAlign: TextAlign.justify,
             ),
@@ -107,14 +104,14 @@ class PersonalInformationScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildGoogleMapPlaceholder() {
+  Widget _buildGoogleMapPlaceholder(context) {
     return Container(
       width: double.infinity,
       height: 200.0,
       color: Colors.grey[300],
       child: Center(
         child: Text(
-          'Google Map Placeholder',
+          getTranslate(context, 'google_map_placeholder'),
           style: TextStyle(color: Colors.grey[600]),
         ),
       ),

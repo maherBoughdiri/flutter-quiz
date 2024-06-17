@@ -12,5 +12,13 @@
   "professional_address": "Adresse Professionnelle",
   "skills_certifications": "Compétences et Certifications",
   "portfolio": "Portfolio",
-  "navigation_header": "Navigation"
+  "navigation_header": "Navigation",
+  "full_address": "Route Aéroport Sfax Km 8",
+  "date_of_birth": "Date de naissance",
+  "phone": "Téléphone",
+  "place_of_birth": "Lieu de naissance",
+  "place_of_birth_value": "Kasserine, Tunisie",
+  "about_me": "À propos de moi",
+  "about_me_content": "Je suis Maher Boughdiri, un développeur full stack et un spécialiste du support technique dédié. Avec une solide expérience dans les technologies front-end et back-end, j'apporte des solutions créatives et une excellence technique à chaque projet. Mon parcours dans la technologie a commencé en Tunisie, où j'ai développé une passion pour la résolution de problèmes et la pensée innovante. Aujourd'hui, je mets mes compétences à profit pour créer des applications robustes et conviviales et fournir un support technique de premier ordre. Que je code une nouvelle fonctionnalité ou que je résolve un problème, je m'épanouis dans des environnements dynamiques et j'aime transformer des défis complexes en opportunités de croissance et d'apprentissage.",
+  "google_map_placeholder": "Google Map Placeholder"
 }

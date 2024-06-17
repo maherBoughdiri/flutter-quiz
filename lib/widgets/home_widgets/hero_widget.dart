@@ -20,11 +20,11 @@ class _buildHeroSectionState extends State<buildHeroSection> {
         // Background image
         gradient: LinearGradient(
           colors: [
-            Theme.of(context).primaryColor.withOpacity(0.8),
             Color(0xFFFCA311).withOpacity(0.8),
+            Theme.of(context).primaryColor.withOpacity(0.8),
           ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(32.0),
