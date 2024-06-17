@@ -66,5 +66,21 @@
   "flutter_certified_developer": "Développeur certifié Flutter",
   "java_programming_certification": "Certification en programmation Java",
   "aws_certified_developer": "Développeur certifié AWS",
-  "google_cloud_associate_engineer": "Ingénieur associé Google Cloud"
+  "google_cloud_associate_engineer": "Ingénieur associé Google Cloud",
+  "portfolio_title": "Portfolio",
+  "laravel_project_1_name": "Projet Forum Futuriste avec Laravel et Vue.js",
+  "laravel_project_1_description": "Développé une plateforme de forum utilisant Laravel, Vue.js, et introduit des fonctionnalités futures.",
+  "laravel_project_2_name": "Laravel Angular Ionic Kundenkart",
+  "laravel_project_2_description": "Travaillé sur un système ERP utilisant Laravel, Angular, et Ionic pour la gestion client.",
+  "vue_project_name": "Portfolio Personnel Vue.js",
+  "vue_project_description": "Créé un site web de portfolio personnel utilisant Vue.js, mettant en avant les compétences et projets.",
+  "angular_project_name": "Intégration Sociale avec Angular et Laravel",
+  "angular_project_description": "Implémentation de l'intégration des médias sociaux avec Angular et Laravel pour des mises à jour en temps réel.",
+  "flutter_project_name": "Application de Portfolio Flutter",
+  "flutter_project_description": "Développé une application mobile de portfolio utilisant Flutter, mettant en avant les compétences et projets.",
+  "python_project_name": "Application de Chat Bot Intelligent Python",
+  "python_project_description": "Conçu et développé une application de chat bot intelligent en Python pour des réponses automatisées.",
+  "ionic_project_name": "Application Mobile de Blog avec Ionic",
+  "ionic_project_description": "Développé une application mobile de blogging avec Ionic, permettant aux utilisateurs de publier et partager du contenu."
+
 }

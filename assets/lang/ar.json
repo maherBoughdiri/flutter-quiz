@@ -66,5 +66,20 @@
   "flutter_certified_developer": "مطور معتمد في Flutter",
   "java_programming_certification": "شهادة في برمجة Java",
   "aws_certified_developer": "مطور معتمد في AWS",
-  "google_cloud_associate_engineer": "مهندس معتمد من Google Cloud"
+  "google_cloud_associate_engineer": "مهندس معتمد من Google Cloud",
+  "portfolio_title": "السيرة الذاتية",
+  "laravel_project_1_name": "مشروع منتدى المستقبل بلارافيل وفيو جي إس",
+  "laravel_project_1_description": "قمت بتطوير منصة منتدى باستخدام لارافيل، فيو جي إس، وإدخال وظائف مستقبلية.",
+  "laravel_project_2_name": "لارافيل أنغولار أيونيك كوندينكارت",
+  "laravel_project_2_description": "عملت على نظام ERP باستخدام لارافيل، أنغولار، وإيونيك لإدارة العملاء.",
+  "vue_project_name": "موقع شخصي بفيو جي إس",
+  "vue_project_description": "أنشأت موقع شخصي للسيرة الذاتية باستخدام فيو جي إس، عرضت فيه المهارات والمشاريع.",
+  "angular_project_name": "تكامل الوسائط الاجتماعية بأنغولار ولارافيل",
+  "angular_project_description": "نفذت تكامل وسائل التواصل الاجتماعي باستخدام أنغولار ولارافيل للتحديثات في الوقت الحقيقي.",
+  "flutter_project_name": "تطبيق سيرة ذاتية بفلاتر",
+  "flutter_project_description": "قمت بتطوير تطبيق سيرة ذاتية على الهواتف المحمولة باستخدام فلاتر، عرضت فيه المهارات والمشاريع.",
+  "python_project_name": "تطبيق شات بوت ذكي بالبايثون",
+  "python_project_description": "قمت بتصميم وبناء تطبيق شات بوت ذكي بالبايثون للردود التلقائية.",
+  "ionic_project_name": "تطبيق مدونة محمول بالأيونيك",
+  "ionic_project_description": "قمت بتطوير تطبيق مدونة محمول بالأيونيك، يتيح للمستخدمين نشر ومشاركة المحتوى."
 }

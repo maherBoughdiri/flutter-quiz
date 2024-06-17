@@ -1,88 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:skills_app/constants/localisation.constant.dart';
 
 class PortfolioScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Portfolio'),
+        title: Text(getTranslate(context, 'portfolio_title')),
       ),
-      body: ListView(
+      body: ListView.builder(
         padding: EdgeInsets.all(16.0),
-        children: [
-          _buildSkillGroup('Flutter', [
-            _buildProjectCard(
-              'Project 1',
-              'Description of Project 1',
-              'assets/images/portfolio_image.jpg',
-            ),
-            _buildProjectCard(
-              'Project 2',
-              'Description of Project 2',
-              'assets/images/portfolio_image.jpg',
-            ),
-            _buildProjectCard(
-              'Project 3',
-              'Description of Project 3',
-              'assets/images/portfolio_image.jpg',
-            ),
-          ]),
-          SizedBox(height: 20),
-          _buildSkillGroup('Dart', [
-            _buildProjectCard(
-              'Project 4',
-              'Description of Project 4',
-              'assets/images/portfolio_image.jpg',
-            ),
-            _buildProjectCard(
-              'Project 5',
-              'Description of Project 5',
-              'assets/images/portfolio_image.jpg',
-            ),
-          ]),
-          SizedBox(height: 20),
-          _buildSkillGroup('Java', [
-            _buildProjectCard(
-              'Project 6',
-              'Description of Project 6',
-              'assets/images/portfolio_image.jpg',
-            ),
-            _buildProjectCard(
-              'Project 7',
-              'Description of Project 7',
-              'assets/images/portfolio_image.jpg',
-            ),
-          ]),
-        ],
+        itemCount: cvProjects.length,
+        itemBuilder: (context, index) {
+          String skill = cvProjects[index]['skill'];
+          List<Map<String, String>> projects = cvProjects[index]['projects'];
+
+          return _buildSkillGroup(skill, projects, context);
+        },
       ),
     );
   }
 
-  Widget _buildSkillGroup(String skill, List<Widget> projects) {
+  Widget _buildSkillGroup(
+      String skill, List<Map<String, String>> projects, BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          skill,
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 8.0),
+          child: Text(
+            skill,
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-        SizedBox(height: 10),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: projects,
+            children: projects
+                .map((project) => _buildProjectCard(
+                      project['nameKey'] ?? '',
+                      project['descriptionKey'] ?? '',
+                      'assets/images/portfolio_image.jpg', // replace with actual image path
+                      context,
+                    ))
+                .toList(),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildProjectCard(String name, String description, String imagePath) {
+  Widget _buildProjectCard(String nameKey, String descriptionKey,
+      String imagePath, BuildContext context) {
+    String projectName = getTranslate(context, nameKey);
+    String projectDescription = getTranslate(context, descriptionKey);
+
     return Container(
-      width: 200,
+      width: 300,
       margin: EdgeInsets.only(right: 16.0),
       child: Card(
         elevation: 4.0,
@@ -96,8 +73,8 @@ class PortfolioScreen extends StatelessWidget {
               borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
               child: Image.asset(
                 imagePath,
-                width: 200,
-                height: 100,
+                width: 300,
+                height: 150,
                 fit: BoxFit.cover,
               ),
             ),
@@ -107,7 +84,7 @@ class PortfolioScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    projectName,
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
@@ -115,10 +92,8 @@ class PortfolioScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 4.0),
                   Text(
-                    description,
+                    projectDescription,
                     style: TextStyle(fontSize: 14.0),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
@@ -128,4 +103,66 @@ class PortfolioScreen extends StatelessWidget {
       ),
     );
   }
+
+  // Replace with actual data from your CV
+  List<Map<String, dynamic>> cvProjects = [
+    {
+      'skill': 'Laravel',
+      'projects': [
+        {
+          'nameKey': 'laravel_project_1_name',
+          'descriptionKey': 'laravel_project_1_description',
+        },
+        {
+          'nameKey': 'laravel_project_2_name',
+          'descriptionKey': 'laravel_project_2_description',
+        },
+      ],
+    },
+    {
+      'skill': 'Vue.js',
+      'projects': [
+        {
+          'nameKey': 'vue_project_name',
+          'descriptionKey': 'vue_project_description',
+        },
+      ],
+    },
+    {
+      'skill': 'Angular',
+      'projects': [
+        {
+          'nameKey': 'angular_project_name',
+          'descriptionKey': 'angular_project_description',
+        },
+      ],
+    },
+    {
+      'skill': 'Ionic',
+      'projects': [
+        {
+          'nameKey': 'ionic_project_name',
+          'descriptionKey': 'ionic_project_description',
+        },
+      ],
+    },
+    {
+      'skill': 'Flutter',
+      'projects': [
+        {
+          'nameKey': 'flutter_project_name',
+          'descriptionKey': 'flutter_project_description',
+        },
+      ],
+    },
+    {
+      'skill': 'Python',
+      'projects': [
+        {
+          'nameKey': 'python_project_name',
+          'descriptionKey': 'python_project_description',
+        },
+      ],
+    },
+  ];
 }

@@ -66,5 +66,19 @@
   "flutter_certified_developer": "Flutter Certified Developer",
   "java_programming_certification": "Java Programming Certification",
   "aws_certified_developer": "AWS Certified Developer",
-  "google_cloud_associate_engineer": "Google Cloud Associate Engineer"
+  "google_cloud_associate_engineer": "Google Cloud Associate Engineer",
+  "laravel_project_1_name": "Released Future Forum Project",
+  "laravel_project_1_description": "Developed a forum platform using Laravel, Vue.js, and released future functionality.",
+  "laravel_project_2_name": "Laravel Angular Ionic Kundenkart",
+  "laravel_project_2_description": "Worked on an ERP system using Laravel, Angular, and Ionic for customer management.",
+  "vue_project_name": "Vue.js Personal Portfolio",
+  "vue_project_description": "Created a personal portfolio website using Vue.js, showcasing skills and projects.",
+  "angular_project_name": "Angular Laravel Social Push",
+  "angular_project_description": "Implemented social media integration using Angular and Laravel for real-time updates.",
+  "flutter_project_name": "Flutter Portfolio App",
+  "flutter_project_description": "Developed a mobile portfolio app using Flutter, showcasing skills and projects.",
+  "python_project_name": "Python Smart Chat Bot App",
+  "python_project_description": "Designed and built a smart chat bot application in Python for automated responses.",
+  "ionic_project_name": "Ionic Mobile Blog App",
+  "ionic_project_description": "Developed a mobile blogging application using Ionic, allowing users to post and share content."
 }
