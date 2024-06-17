@@ -16,7 +16,7 @@ class ProfessionalAddressScreen extends StatelessWidget {
               options: MapOptions(
                 initialCenter: LatLng(34.750918, 10.729254),
                 initialZoom: 13.0,
-                minZoom: 10.0,
+                minZoom: 5.0,
               ),
               children: [
                 TileLayer(
