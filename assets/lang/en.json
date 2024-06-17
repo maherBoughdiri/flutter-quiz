@@ -34,5 +34,16 @@
   "intern_position": "Intern",
   "djerba_school": "Lycée Technique Djerba",
   "internship_duration": "March 2021 - June 2021",
-  "internship_description": "Developed a social media site for the school environment."
+  "internship_description": "Developed a social media site for the school environment.",
+  "education_title": "Education",
+  "education_timeline_header": "Education Timeline",
+  "bachelor_degree": "Bachelor of Science in Computer Science",
+  "springfield_university": "Springfield University",
+  "bachelor_year": "2015 - 2019",
+  "bachelor_description": "Studied various aspects of computer science including algorithms, data structures, and software engineering. Graduated with honors.",
+  "high_school_diploma": "High School Diploma",
+  "springfield_high_school": "Springfield High School",
+  "high_school_year": "2011 - 2015",
+  "high_school_description": "Focused on science and mathematics, participating in various extracurricular activities such as the coding club and math olympiad."
+
 }

@@ -34,5 +34,16 @@
   "intern_position": "Stagiaire",
   "djerba_school": "Lycée Technique Djerba",
   "internship_duration": "Mars 2021 - Juin 2021",
-  "internship_description": "Développé un site de médias sociaux pour l'environnement scolaire."
+  "internship_description": "Développé un site de médias sociaux pour l'environnement scolaire.",
+  "education_title": "Éducation",
+  "education_timeline_header": "Chronologie de l'éducation",
+  "bachelor_degree": "Licence en Informatique",
+  "springfield_university": "Université de Springfield",
+  "bachelor_year": "2015 - 2019",
+  "bachelor_description": "Étudié divers aspects de l'informatique, y compris les algorithmes, les structures de données et l'ingénierie logicielle. Diplômé avec mention.",
+  "high_school_diploma": "Diplôme d'études secondaires",
+  "springfield_high_school": "Lycée de Springfield",
+  "high_school_year": "2011 - 2015",
+  "high_school_description": "Concentré sur les sciences et les mathématiques, participant à diverses activités parascolaires telles que le club de codage et les olympiades de mathématiques."
+
 }

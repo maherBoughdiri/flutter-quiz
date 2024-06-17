@@ -34,5 +34,15 @@
   "intern_position": "متدرب",
   "djerba_school": "مدرسة الطريق الفني بجربة",
   "internship_duration": "مارس 2021 - يونيو 2021",
-  "internship_description": "تطوير موقع وسائل الإعلام الاجتماعية للبيئة المدرسية."
+  "internship_description": "تطوير موقع وسائل الإعلام الاجتماعية للبيئة المدرسية.",
+  "education_title": "التعليم",
+  "education_timeline_header": "الجدول الزمني للتعليم",
+  "bachelor_degree": "بكالوريوس في علوم الكمبيوتر",
+  "springfield_university": "جامعة سبرينغفيلد",
+  "bachelor_year": "2015 - 2019",
+  "bachelor_description": "دراسة مختلف جوانب علوم الكمبيوتر بما في ذلك الخوارزميات وهياكل البيانات والهندسة البرمجية. التخرج مع مرتبة الشرف.",
+  "high_school_diploma": "شهادة الثانوية العامة",
+  "springfield_high_school": "مدرسة سبرينغفيلد الثانوية",
+  "high_school_year": "2011 - 2015",
+  "high_school_description": "التركيز على العلوم والرياضيات ، والمشاركة في مختلف الأنشطة اللامنهجية مثل نادي البرمجة وأولمبياد الرياضيات."
 }

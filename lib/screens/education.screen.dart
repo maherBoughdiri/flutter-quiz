@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:skills_app/constants/localisation.constant.dart';
 
 class EducationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Education'),
+        title: Text(getTranslate(context, 'education_title')),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildTimelineHeader('Education Timeline'),
+            _buildTimelineHeader(
+                getTranslate(context, 'education_timeline_header')),
+            SizedBox(height: 16.0),
             _buildTimelineItem(
               context,
-              degree: 'Bachelor of Science in Computer Science',
-              institution: 'Springfield University',
-              year: '2015 - 2019',
-              description:
-                  'Studied various aspects of computer science including algorithms, data structures, and software engineering. Graduated with honors.',
+              degree: 'bachelor_degree',
+              institution: 'springfield_university',
+              year: 'bachelor_year',
+              description: 'bachelor_description',
               isFirst: true,
             ),
+            SizedBox(height: 16.0),
             _buildTimelineItem(
               context,
-              degree: 'High School Diploma',
-              institution: 'Springfield High School',
-              year: '2011 - 2015',
-              description:
-                  'Focused on science and mathematics, participating in various extracurricular activities such as the coding club and math olympiad.',
+              degree: 'high_school_diploma',
+              institution: 'springfield_high_school',
+              year: 'high_school_year',
+              description: 'high_school_description',
               isLast: true,
             ),
           ],
@@ -43,8 +45,16 @@ class EducationScreen extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-          fontSize: 24.0,
+          fontSize: 28.0,
           fontWeight: FontWeight.bold,
+          color: Colors.blueAccent,
+          shadows: [
+            Shadow(
+              blurRadius: 10.0,
+              color: Colors.blueAccent.withOpacity(0.5),
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
         ),
       ),
     );
@@ -62,7 +72,7 @@ class EducationScreen extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          left: 20,
+          left: 30,
           top: 0,
           bottom: isLast ? 20 : 0,
           child: Container(
@@ -75,11 +85,20 @@ class EducationScreen extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.only(top: 8),
-              width: 40,
-              height: 40,
+              width: 50,
+              height: 50,
               decoration: BoxDecoration(
-                color: Colors.blueAccent,
                 shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  colors: [Color(0xFFFCA311), Theme.of(context).primaryColor],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6.0,
+                    offset: Offset(0, 2),
+                  ),
+                ],
               ),
               child: Center(
                 child: Icon(Icons.school, color: Colors.white),
@@ -88,38 +107,43 @@ class EducationScreen extends StatelessWidget {
             SizedBox(width: 16.0),
             Expanded(
               child: Card(
+                elevation: 5,
                 margin: EdgeInsets.symmetric(vertical: 8.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        degree,
+                        getTranslate(context, degree),
                         style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(height: 8.0),
                       Text(
-                        institution,
+                        getTranslate(context, institution),
                         style: TextStyle(
-                          fontSize: 16.0,
+                          fontSize: 18.0,
                           color: Colors.blueAccent,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                       SizedBox(height: 4.0),
                       Text(
-                        year,
+                        getTranslate(context, year),
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 16.0,
                           color: Colors.grey[600],
                         ),
                       ),
                       SizedBox(height: 8.0),
                       Text(
-                        description,
+                        getTranslate(context, description),
                         style: TextStyle(fontSize: 16.0),
                         textAlign: TextAlign.justify,
                       ),
