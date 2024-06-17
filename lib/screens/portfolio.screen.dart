@@ -6,7 +6,7 @@ class PortfolioScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(getTranslate(context, 'portfolio_title')),
+        title: Text(getTranslate(context, 'portfolio')),
       ),
       body: ListView.builder(
         padding: EdgeInsets.all(16.0),
