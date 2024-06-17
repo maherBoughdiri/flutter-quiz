@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:skills_app/constants/localisation.constant.dart';
 
 class ProfessionalExperienceScreen extends StatelessWidget {
   @override
@@ -14,25 +13,26 @@ class ProfessionalExperienceScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildTimelineHeader('Professional Experience Timeline'),
+            _buildTimelineHeader(getTranslate(context, 'timeline_header')),
+            SizedBox(height: 16.0),
             _buildTimelineItem(
               context,
-              position: 'Software Engineer',
-              company: 'Tech Solutions Inc.',
-              year: '2020 - Present',
-              description:
-                  'Working on developing scalable web applications and APIs. Led a team of developers in various projects, focusing on improving code quality and performance.',
+              position: 'software_engineer_position',
+              company: 'tech_solutions_company',
+              year: 'current_job_duration',
+              description: 'current_job_description',
               isFirst: true,
             ),
-            _buildTimelineItemWithMap(
+            SizedBox(height: 16.0),
+            _buildTimelineItem(
               context,
-              position: 'Junior Developer',
-              company: 'Innovative Apps Ltd.',
-              year: '2018 - 2020',
-              description:
-                  'Assisted in the development of mobile applications. Gained experience in full-stack development and collaborated with cross-functional teams.',
+              position: 'full_stack_developer_position',
+              company: 'navicom_company',
+              year: 'navicom_job_duration',
+              description: 'navicom_job_description',
               isLast: true,
             ),
+            SizedBox(height: 16.0),
           ],
         ),
       ),
@@ -45,8 +45,16 @@ class ProfessionalExperienceScreen extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-          fontSize: 24.0,
+          fontSize: 28.0,
           fontWeight: FontWeight.bold,
+          color: Colors.blueAccent,
+          shadows: [
+            Shadow(
+              blurRadius: 10.0,
+              color: Colors.blueAccent.withOpacity(0.5),
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
         ),
       ),
     );
@@ -64,7 +72,7 @@ class ProfessionalExperienceScreen extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          left: 20,
+          left: 30,
           top: 0,
           bottom: isLast ? 20 : 0,
           child: Container(
@@ -77,11 +85,20 @@ class ProfessionalExperienceScreen extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.only(top: 8),
-              width: 40,
-              height: 40,
+              width: 50,
+              height: 50,
               decoration: BoxDecoration(
-                color: Colors.blueAccent,
                 shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  colors: [Color(0xFFFCA311), Theme.of(context).primaryColor],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6.0,
+                    offset: Offset(0, 2),
+                  ),
+                ],
               ),
               child: Center(
                 child: Icon(Icons.work, color: Colors.white),
@@ -90,38 +107,43 @@ class ProfessionalExperienceScreen extends StatelessWidget {
             SizedBox(width: 16.0),
             Expanded(
               child: Card(
+                elevation: 5,
                 margin: EdgeInsets.symmetric(vertical: 8.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        position,
+                        getTranslate(context, position),
                         style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(height: 8.0),
                       Text(
-                        company,
+                        getTranslate(context, company),
                         style: TextStyle(
-                          fontSize: 16.0,
+                          fontSize: 18.0,
                           color: Colors.blueAccent,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                       SizedBox(height: 4.0),
                       Text(
-                        year,
+                        getTranslate(context, year),
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 16.0,
                           color: Colors.grey[600],
                         ),
                       ),
                       SizedBox(height: 8.0),
                       Text(
-                        description,
+                        getTranslate(context, description),
                         style: TextStyle(fontSize: 16.0),
                         textAlign: TextAlign.justify,
                       ),
@@ -131,47 +153,6 @@ class ProfessionalExperienceScreen extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ],
-    );
-  }
-
-  Widget _buildTimelineItemWithMap(
-    BuildContext context, {
-    required String position,
-    required String company,
-    required String year,
-    required String description,
-    bool isFirst = false,
-    bool isLast = false,
-  }) {
-    return Column(
-      children: [
-        _buildTimelineItem(
-          context,
-          position: position,
-          company: company,
-          year: year,
-          description: description,
-          isFirst: isFirst,
-          isLast: isLast,
-        ),
-        SizedBox(height: 16),
-        Container(
-          height: 200,
-          child: FlutterMap(
-            options: MapOptions(
-              initialCenter: LatLng(51.5, -0.09),
-              initialZoom: 13.0,
-            ),
-            children: [
-              TileLayer(
-                urlTemplate:
-                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                subdomains: ['a', 'b', 'c'],
-              ),
-            ],
-          ),
         ),
       ],
     );

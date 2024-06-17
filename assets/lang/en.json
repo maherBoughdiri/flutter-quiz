@@ -20,5 +20,19 @@
   "place_of_birth_value": "Kasserine, Tunisia",
   "about_me": "About Me",
   "about_me_content": "I am Maher Boughdiri, a dedicated Full Stack Developer and Technical Support Specialist. With a strong foundation in both front-end and back-end technologies, I bring creative solutions and technical excellence to every project. My journey in tech started in Tunisia, where I developed a passion for problem-solving and innovative thinking. Today, I leverage my skills to build robust, user-friendly applications and provide top-notch technical support. Whether coding a new feature or troubleshooting an issue, I thrive in dynamic environments and love turning complex challenges into opportunities for growth and learning.",
-  "google_map_placeholder": "Google Map Placeholder"
+  "google_map_placeholder": "Google Map Placeholder",
+  "professional_experience_title": "Professional Experience",
+  "timeline_header": "Professional Experience Timeline",
+  "software_engineer_position": "Software Engineer",
+  "tech_solutions_company": "Tech Solutions Inc.",
+  "current_job_duration": "2020 - Present",
+  "current_job_description": "Working on developing scalable web applications and APIs. Led a team of developers in various projects, focusing on improving code quality and performance.",
+  "full_stack_developer_position": "Full Stack Developer",
+  "navicom_company": "Navicom",
+  "navicom_job_duration": "September 2021 - January 2022",
+  "navicom_job_description": "Worked on an ERP system with React and PHP.",
+  "intern_position": "Intern",
+  "djerba_school": "Lycée Technique Djerba",
+  "internship_duration": "March 2021 - June 2021",
+  "internship_description": "Developed a social media site for the school environment."
 }
