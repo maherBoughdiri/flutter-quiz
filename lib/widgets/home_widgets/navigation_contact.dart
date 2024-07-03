@@ -43,12 +43,12 @@ class _NavigationCardsWidgetState extends State<NavigationContactWidget> {
                 _buildActionWidget(
                   'Go to Facebook',
                   Icons.facebook,
-                  () => _launchURL('https://www.facebook.com/your-profile'),
+                  () => _launchURL('https://www.facebook.com/'),
                 ),
                 _buildActionWidget(
                   'Go to Instagram',
                   Icons.camera_alt,
-                  () => _launchURL('https://www.instagram.com/your-profile'),
+                  () => _launchURL('https://www.instagram.com/'),
                 ),
                 _buildActionWidget(
                   'Open Maps',
@@ -88,10 +88,12 @@ class _NavigationCardsWidgetState extends State<NavigationContactWidget> {
   }
 
   void _launchURL(String url) async {
-    if (await canLaunchUrl(Uri.dataFromString(url))) {
-      await launchUrl(Uri.dataFromString(url));
-    } else {
-      throw 'Could not launch $url';
+    print('launch ==> $url');
+    if (!await launchUrl(
+      Uri.parse(url),
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception('Could not launch $url');
     }
   }
 
