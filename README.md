@@ -57,46 +57,40 @@ Make sure you have the following installed:
 2. **Navigate to the project directory**
 
     ```sh
-    Copier le code
     cd your-flutter-portfolio
     ```
 3. **Install dependencies**
 
     ```sh
-    Copier le code
     flutter pub get
     ```
 ## Usage
 4. **Run the app**
 
     ```sh
-    Copier le code
     flutter run
     ```
 5. **Build the app for production**
 
-For Android:
+* For Android:
 
     ```sh
-    Copier le code
     flutter build apk
     ```
 * For iOS:
 
     ```sh
-    Copier le code
     flutter build ios
     ```
 
 ## Contributing
 
-Contributing
 Contributions make the open source community a fantastic place to learn and create. Your contributions are greatly appreciated.
 
-Fork the Project
+## Fork the Project
 Create your Feature Branch (git checkout -b feature/AmazingFeature)
 Commit your Changes (git commit -m 'Add some AmazingFeature')
 Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
-License
+## License
 Distributed under the MIT License. See LICENSE for more information.
