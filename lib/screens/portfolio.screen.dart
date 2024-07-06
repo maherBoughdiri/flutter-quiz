@@ -43,7 +43,8 @@ class PortfolioScreen extends StatelessWidget {
                 .map((project) => _buildProjectCard(
                       project['nameKey'] ?? '',
                       project['descriptionKey'] ?? '',
-                      'assets/images/portfolio_image.jpg', // replace with actual image path
+                      project['logo'] ??
+                          'assets/images/portfolio_image.jpg', // replace with actual image path
                       context,
                     ))
                 .toList(),
@@ -111,10 +112,12 @@ class PortfolioScreen extends StatelessWidget {
       'projects': [
         {
           'nameKey': 'laravel_project_1_name',
+          'logo': 'assets/images/ff.jpg',
           'descriptionKey': 'laravel_project_1_description',
         },
         {
           'nameKey': 'laravel_project_2_name',
+          'logo': 'assets/images/mycar-d.jpg',
           'descriptionKey': 'laravel_project_2_description',
         },
       ],
@@ -124,6 +127,7 @@ class PortfolioScreen extends StatelessWidget {
       'projects': [
         {
           'nameKey': 'vue_project_name',
+          'logo': 'assets/images/ff.jpg',
           'descriptionKey': 'vue_project_description',
         },
       ],
@@ -133,6 +137,7 @@ class PortfolioScreen extends StatelessWidget {
       'projects': [
         {
           'nameKey': 'angular_project_name',
+          'logo': 'assets/images/social.webp',
           'descriptionKey': 'angular_project_description',
         },
       ],
@@ -142,6 +147,7 @@ class PortfolioScreen extends StatelessWidget {
       'projects': [
         {
           'nameKey': 'ionic_project_name',
+          'logo': 'assets/images/mycar-d.jpg',
           'descriptionKey': 'ionic_project_description',
         },
       ],
@@ -151,6 +157,7 @@ class PortfolioScreen extends StatelessWidget {
       'projects': [
         {
           'nameKey': 'flutter_project_name',
+          'logo': 'assets/images/portfolio_10438214.png',
           'descriptionKey': 'flutter_project_description',
         },
       ],
