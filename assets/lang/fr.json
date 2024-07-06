@@ -81,6 +81,7 @@
   "python_project_name": "Application de Chat Bot Intelligent Python",
   "python_project_description": "Conçu et développé une application de chat bot intelligent en Python pour des réponses automatisées.",
   "ionic_project_name": "Application Mobile de Blog avec Ionic",
-  "ionic_project_description": "Développé une application mobile de blogging avec Ionic, permettant aux utilisateurs de publier et partager du contenu."
+  "ionic_project_description": "Développé une application mobile de blogging avec Ionic, permettant aux utilisateurs de publier et partager du contenu.",
+  "contact" : "Contact"
 
 }

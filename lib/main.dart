@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Portfolio App',
+      title: 'SkillTree',
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: _themeMode,

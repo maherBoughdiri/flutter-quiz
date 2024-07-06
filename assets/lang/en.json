@@ -80,5 +80,6 @@
   "python_project_name": "Python Smart Chat Bot App",
   "python_project_description": "Designed and built a smart chat bot application in Python for automated responses.",
   "ionic_project_name": "Ionic Mobile Blog App",
-  "ionic_project_description": "Developed a mobile blogging application using Ionic, allowing users to post and share content."
+  "ionic_project_description": "Developed a mobile blogging application using Ionic, allowing users to post and share content.",
+  "contact" : "Contact"
 }
