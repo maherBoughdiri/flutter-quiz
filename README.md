@@ -25,16 +25,25 @@ Welcome to my Flutter Portfolio Project! This repository is a showcase of my jou
 ## Screenshots
 
 ### Home Screen
-![Home Screen](assets/screenshots/home.png)
-*The welcoming home screen with an intuitive layout.*
+![alt text](image.png)  ![alt text](image-1.png)
 
-### Profile Screen
-![Profile Screen](assets/screenshots/profile.png)
-*Effortlessly view and edit your profile.*
+![alt text](image-2.png) ![alt text](image-3.png)
 
-### Settings Screen
-![Settings Screen](assets/screenshots/settings.png)
-*Customize your app experience in the settings screen.*
+### Portfolio
+![alt text](image-4.png)
+
+### Profile
+![alt text](image-5.png)
+
+### Education
+![alt text](image-6.png)
+
+### Professional address
+![alt text](image-7.png)
+
+### Skill
+![alt text](image-8.png)
+
 
 ## Getting Started
 
@@ -52,7 +61,7 @@ Make sure you have the following installed:
 1. **Clone the repository**
 
    ```sh
-   git clone https://github.com/yourusername/your-flutter-portfolio.git
+   git clone https://github.com/maherBoughdiri/flutter-portfolio-app.git
    ```
 2. **Navigate to the project directory**
 
@@ -94,3 +103,4 @@ Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 ## License
 Distributed under the MIT License. See LICENSE for more information.
+
