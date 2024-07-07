@@ -65,7 +65,9 @@ class _NavigationCardsWidgetState extends State<NavigationContactWidget> {
                 _buildActionWidget(
                   'Download CV',
                   Icons.picture_as_pdf,
-                  () => _downloadLocalPDF(context),
+                  // () => _downloadLocalPDF(context),
+                  () => _launchURL(
+                      "https://drive.google.com/file/d/1f25MxH46lkO8r83rm4XjvZ_gktZhtE94/view?usp=sharing"),
                 ),
                 // _buildActionWidget(
                 //   'CV Information',
