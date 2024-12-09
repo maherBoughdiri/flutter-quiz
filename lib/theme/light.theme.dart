@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:skills_app/constants/colors.constants.dart';
-import 'package:skills_app/core/colors/colors.services.dart';
+import 'package:quiz/constants/colors.constants.dart';
+import 'package:quiz/core/colors/colors.services.dart';
 
 ThemeData lightTheme = ThemeData(
   primaryColor: oxfordBlue,

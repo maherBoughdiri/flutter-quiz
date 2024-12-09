@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:skills_app/core/localization/app_localizations.dart';
-import 'package:skills_app/core/routes/routes.dart';
-import 'package:skills_app/theme/dark.theme.dart';
-import 'package:skills_app/theme/light.theme.dart';
+import 'package:quiz/core/localization/app_localizations.dart';
+import 'package:quiz/core/routes/routes.dart';
+import 'package:quiz/theme/dark.theme.dart';
+import 'package:quiz/theme/light.theme.dart';
 
 void main() {
   runApp(MyApp());
