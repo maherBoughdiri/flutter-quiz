@@ -1,106 +1,73 @@
-# Flutter Portfolio Project
+# Quiz App Portfolio Project
 
+Welcome to my **Quiz App Portfolio Project**! This repository showcases a simple, interactive quiz app built using **Flutter**. Dive into the code, explore the features, and see how the app works.
 
-Welcome to my Flutter Portfolio Project! This repository is a showcase of my journey in mobile app development using Flutter. Dive into the code, explore the features, and see what I've built.
+---
 
 ## Table of Contents
 
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Quiz App Portfolio Project](#quiz-app-portfolio-project)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Screenshots](#screenshots)
+    - [Home Screen](#home-screen)
+    - [Quiz Page](#quiz-page)
+    - [Results Page](#results-page)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+
+---
 
 ## Features
 
-- **Sleek UI**: A modern, visually appealing user interface.
-- **Cross-Platform**: Runs seamlessly on both Android and iOS devices.
-- **Interactive Components**: Engaging elements like buttons, sliders, and animations.
-- **State Management**: Efficiently managed using the Provider package.
-- **API Integration**: Dynamic data fetching from remote APIs.
-- **Smooth Navigation**: Easy and intuitive screen transitions.
+The **Quiz App** comes with these exciting features:
+
+- **Modern UI**: Sleek, user-friendly, and visually appealing design.
+- **Cross-Platform**: Fully functional on both **Android** and **iOS**.
+- **Interactive Quiz Experience**: Multiple-choice questions with instant feedback.
+- **Timer Integration**: Countdown timer to make the quiz experience more interactive.
+- **API Integration**: Questions dynamically fetched from [Open Trivia Database](https://opentdb.com).
+- **Smooth Navigation**: Intuitive navigation between different app sections like the home screen, quiz screen, and results screen.
+- **State Management with Provider**: Efficient management of quiz state and logic.
+
+---
 
 ## Screenshots
 
 ### Home Screen
-![alt text](image.png)  ![alt text](image-1.png)
+The entry point of the app, showing quiz categories and information about the quiz's features.
 
-![alt text](image-2.png) ![alt text](image-3.png)
+![Home Screen Screenshot light](image-1.png)
+![Home Screen Screenshot dark](image-2.png)
+![Home Screen Screenshot localization](image-4.png)
 
-### Portfolio
-![alt text](image-4.png)
+### Quiz Page
+This is where users answer the questions under time pressure.
 
-### Profile
-![alt text](image-5.png)
+![Quiz Screen Screenshot setting](image-3.png)
+![Quiz Screen Screenshot quiz question](image-5.png)
 
-### Education
-![alt text](image-6.png)
+### Results Page
+Users can view their scores and the top score for each quiz category.
 
-### Professional address
-![alt text](image-7.png)
+![Results Screen Screenshot](image-6.png)
 
-### Skill
-![alt text](image-8.png)
-
+---
 
 ## Getting Started
 
-To get a local copy up and running, follow these steps.
+To get a local copy of the app up and running on your machine, follow these steps.
+
+---
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Ensure you have the following tools installed:
 
-- [Flutter SDK](https://flutter.dev/docs/get-started/install)
-- [Android Studio](https://developer.android.com/studio) or [Xcode](https://developer.apple.com/xcode/)
+- **Flutter SDK**: [Setup Instructions](https://flutter.dev/docs/get-started/install)
+- **Android Studio** or **Xcode** (for iOS development):  
+  - [Android Studio](https://developer.android.com/studio)  
+  - [Xcode](https://developer.apple.com/xcode/)
 
-### Installation
-
-1. **Clone the repository**
-
-   ```sh
-   git clone https://github.com/maherBoughdiri/flutter-portfolio-app.git
-   ```
-2. **Navigate to the project directory**
-
-    ```sh
-    cd your-flutter-portfolio
-    ```
-3. **Install dependencies**
-
-    ```sh
-    flutter pub get
-    ```
-## Usage
-4. **Run the app**
-
-    ```sh
-    flutter run
-    ```
-5. **Build the app for production**
-
-* For Android:
-
-    ```sh
-    flutter build apk
-    ```
-* For iOS:
-
-    ```sh
-    flutter build ios
-    ```
-
-## Contributing
-
-Contributions make the open source community a fantastic place to learn and create. Your contributions are greatly appreciated.
-
-## Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-## License
-Distributed under the MIT License. See LICENSE for more information.
+---
 

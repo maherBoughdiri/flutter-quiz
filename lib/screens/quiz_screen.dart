@@ -141,40 +141,72 @@ class _QuizPageState extends State<QuizPage> {
       appBar: AppBar(
         title: Text('Quiz'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Question ${currentQuestionIndex + 1} of ${questions.length}',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 16),
-            Text(
-              decodeHtmlEntities(currentQuestion['question']),
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 16),
-            Column(
-              children: currentShuffledOptions.map((option) {
-                return ElevatedButton(
-                  onPressed: () {
-                    if (option == currentQuestion['correct_answer']) {
-                      score++;
-                    }
-                    nextQuestion();
-                  },
-                  child: Text(decodeHtmlEntities(option)),
-                );
-              }).toList(),
-            ),
-            Spacer(),
-            Text(
-              'Time Left: $timeLeft seconds',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-          ],
+      body: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Question ${currentQuestionIndex + 1} of ${questions.length}',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 16),
+              Text(
+                decodeHtmlEntities(currentQuestion['question']),
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 16),
+              Column(
+                children: currentShuffledOptions.map((option) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                          backgroundColor:
+                              Colors.blue.shade900, // Background color
+                          foregroundColor: Colors.white, // Text color
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(4), // Rounded corners
+                          ),
+                          elevation: 4, // Shadow effect
+                        ),
+                        onPressed: () {
+                          if (option == currentQuestion['correct_answer']) {
+                            score++;
+                          }
+                          nextQuestion();
+                        },
+                        child: Text(
+                          decodeHtmlEntities(option),
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+              Spacer(),
+              LinearProgressIndicator(
+                value: timeLeft / 20, // Assuming 20 seconds as total time
+                backgroundColor: Colors.grey[300],
+                valueColor:
+                    AlwaysStoppedAnimation<Color>(Colors.orange.shade400),
+                minHeight: 8,
+              ),
+              SizedBox(height: 8),
+              Text(
+                'Time Left: $timeLeft seconds',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
       ),
     );
