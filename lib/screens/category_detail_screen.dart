@@ -58,7 +58,7 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
       context,
       MaterialPageRoute(
         builder: (context) => QuizPage(
-          categoryId: widget.category['id'],
+          category: widget.category,
           questionCount: questionCount,
           difficulty: difficulty,
         ),

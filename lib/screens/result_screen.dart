@@ -5,12 +5,12 @@ import 'package:quiz/constants/parser.function.dart';
 
 class ResultsPage extends StatelessWidget {
   final int score;
-  final int categoryId;
+  final dynamic category;
 
-  ResultsPage({required this.score, required this.categoryId});
+  ResultsPage({required this.score, required this.category});
 
   Future<int> getTopScore() async {
-    int topScoreForCategory = await getTopScoreForCategory(categoryId);
+    int topScoreForCategory = await getTopScoreForCategory(category['id']);
     return topScoreForCategory;
   }
 
@@ -62,7 +62,7 @@ class ResultsPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => CategoryDetailPage(
-                          category: {'id': categoryId},
+                          category: category,
                         ),
                       ),
                     );

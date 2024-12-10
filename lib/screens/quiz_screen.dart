@@ -7,12 +7,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'result_screen.dart';
 
 class QuizPage extends StatefulWidget {
-  final int categoryId;
+  final dynamic category;
   final int questionCount;
   final String difficulty;
 
   QuizPage({
-    required this.categoryId,
+    required this.category,
     required this.questionCount,
     required this.difficulty,
   });
@@ -45,7 +45,7 @@ class _QuizPageState extends State<QuizPage> {
 
   Future<void> fetchQuestions() async {
     final url =
-        'https://opentdb.com/api.php?amount=${widget.questionCount}&category=${widget.categoryId}&difficulty=${widget.difficulty.toLowerCase()}';
+        'https://opentdb.com/api.php?amount=${widget.questionCount}&category=${widget.category['id']}&difficulty=${widget.difficulty.toLowerCase()}';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
@@ -100,7 +100,7 @@ class _QuizPageState extends State<QuizPage> {
 
   Future<void> saveResultsLocally() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String key = 'top_score_category_${widget.categoryId}';
+    String key = 'top_score_category_${widget.category['id']}';
 
     final previousTopScore = prefs.getInt(key) ?? 0;
 
@@ -114,7 +114,7 @@ class _QuizPageState extends State<QuizPage> {
       context,
       MaterialPageRoute(
         builder: (context) =>
-            ResultsPage(score: score, categoryId: widget.categoryId),
+            ResultsPage(score: score, category: widget.category),
       ),
     );
   }
