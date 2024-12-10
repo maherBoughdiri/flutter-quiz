@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/screens/category_detail_screen.dart';
+import 'package:quiz/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:quiz/constants/parser.function.dart';
+import 'package:quiz/constants/localisation.constant.dart';
 
 class ResultsPage extends StatelessWidget {
   final int score;
   final dynamic category;
+  final VoidCallback toggleTheme;
+  final Function(String) changeLanguage;
 
-  ResultsPage({required this.score, required this.category});
+  ResultsPage({
+    required this.score,
+    required this.category,
+    required this.toggleTheme,
+    required this.changeLanguage,
+  });
 
   Future<int> getTopScore() async {
     int topScoreForCategory = await getTopScoreForCategory(category['id']);
@@ -18,7 +27,7 @@ class ResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Results'),
+        title: Text(getTranslate(context, 'results')),
       ),
       body: FutureBuilder<int>(
         future: getTopScore(),
@@ -34,7 +43,7 @@ class ResultsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Your Score',
+                  getTranslate(context, 'your_score'),
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 16),
@@ -50,10 +59,18 @@ class ResultsPage extends StatelessWidget {
                 SizedBox(height: 32),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.popUntil(context,
-                        ModalRoute.withName(Navigator.defaultRouteName));
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeScreen(
+                          toggleTheme: toggleTheme,
+                          changeLanguage: changeLanguage,
+                        ),
+                      ),
+                      (route) => false, // Remove all previous routes
+                    );
                   },
-                  child: Text('Return to Home'),
+                  child: Text(getTranslate(context, 'return_to_home')),
                 ),
                 SizedBox(height: 16),
                 ElevatedButton(
@@ -63,11 +80,13 @@ class ResultsPage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => CategoryDetailPage(
                           category: category,
+                          toggleTheme: toggleTheme,
+                          changeLanguage: changeLanguage,
                         ),
                       ),
                     );
                   },
-                  child: Text('Retry Quiz'),
+                  child: Text(getTranslate(context, 'retry_quiz')),
                 ),
               ],
             ),

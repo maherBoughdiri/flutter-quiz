@@ -10,11 +10,15 @@ class QuizPage extends StatefulWidget {
   final dynamic category;
   final int questionCount;
   final String difficulty;
+  final VoidCallback toggleTheme;
+  final Function(String) changeLanguage;
 
   QuizPage({
     required this.category,
     required this.questionCount,
     required this.difficulty,
+    required this.toggleTheme,
+    required this.changeLanguage,
   });
 
   @override
@@ -113,8 +117,11 @@ class _QuizPageState extends State<QuizPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) =>
-            ResultsPage(score: score, category: widget.category),
+        builder: (context) => ResultsPage(
+            score: score,
+            category: widget.category,
+            toggleTheme: widget.toggleTheme,
+            changeLanguage: widget.changeLanguage),
       ),
     );
   }

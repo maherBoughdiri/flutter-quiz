@@ -3,13 +3,20 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:quiz/screens/quiz_screen.dart';
 import 'package:quiz/constants/parser.function.dart';
+import 'package:quiz/constants/localisation.constant.dart';
 
 import 'package:http/http.dart' as http;
 
 class CategoryDetailPage extends StatefulWidget {
   final dynamic category;
+  final VoidCallback toggleTheme;
+  final Function(String) changeLanguage;
 
-  CategoryDetailPage({required this.category});
+  CategoryDetailPage({
+    required this.category,
+    required this.toggleTheme,
+    required this.changeLanguage,
+  });
 
   @override
   _CategoryDetailPageState createState() => _CategoryDetailPageState();
@@ -61,6 +68,8 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
           category: widget.category,
           questionCount: questionCount,
           difficulty: difficulty,
+          toggleTheme: widget.toggleTheme,
+          changeLanguage: widget.changeLanguage,
         ),
       ),
     );
@@ -86,11 +95,11 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Category ID: ${widget.category['id']}',
-                    style: TextStyle(fontSize: 16),
-                  ),
+                  // SizedBox(height: 8),
+                  // Text(
+                  //   'Category ID: ${widget.category['id']}',
+                  //   style: TextStyle(fontSize: 16),
+                  // ),
                   SizedBox(height: 16),
                   if (categoryDetails != null) ...[
                     Text(
@@ -120,7 +129,7 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
                   ],
                   SizedBox(height: 16),
                   Text(
-                    'Settings',
+                    getTranslate(context, 'settings'),
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -131,7 +140,7 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
                     controller: _questionCountController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                      labelText: 'Number of Questions',
+                      labelText: getTranslate(context, 'number_of_questions'),
                       border: OutlineInputBorder(),
                     ),
                   ),
@@ -139,7 +148,7 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
                   DropdownButtonFormField<String>(
                     value: _selectedDifficulty,
                     decoration: InputDecoration(
-                      labelText: 'Select Difficulty',
+                      labelText: getTranslate(context, 'select_difficulty'),
                       border: OutlineInputBorder(),
                     ),
                     items: ['Easy', 'Medium', 'Hard'].map((difficulty) {
@@ -157,7 +166,7 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
                   Spacer(),
                   ElevatedButton(
                     onPressed: startQuiz,
-                    child: Text('Start Quiz'),
+                    child: Text(getTranslate(context, 'start_quiz')),
                   ),
                 ],
               ),

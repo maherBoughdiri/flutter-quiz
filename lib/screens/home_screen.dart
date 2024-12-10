@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import './quiz_screen.dart';
 import 'category_detail_screen.dart';
+import 'package:quiz/constants/localisation.constant.dart';
+import 'package:quiz/constants/parser.function.dart';
 
 class HomeScreen extends StatefulWidget {
   final VoidCallback toggleTheme;
@@ -16,11 +19,26 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<dynamic> categories = [];
+  Map<int, int> topScores = {};
 
   @override
   void initState() {
     super.initState();
     fetchCategories();
+  }
+
+  Future<void> loadTopScores() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    Map<int, int> scores = {};
+
+    for (var category in categories) {
+      int categoryId = category['id'];
+      scores[categoryId] = prefs.getInt('top_score_category_$categoryId') ?? 0;
+    }
+
+    setState(() {
+      topScores = scores;
+    });
   }
 
   Future<void> fetchCategories() async {
@@ -31,6 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         categories = data['trivia_categories'];
       });
+      // Load top scores after fetching categories
+      loadTopScores();
     }
   }
 
@@ -52,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         title: Text(
-          'Quiz App',
+          getTranslate(context, 'app_title'),
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,
@@ -95,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               // Section about API
               Text(
-                'About the API',
+                getTranslate(context, 'about_api_title'),
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -103,14 +123,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height: 8),
               Text(
-                'This quiz app uses the Open Trivia Database API (https://opentdb.com) to fetch a variety of questions across different categories.',
+                getTranslate(context, 'about_api_description'),
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(height: 16),
 
               // Categories List
               Text(
-                'Categories',
+                getTranslate(context, 'categories'),
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -131,13 +151,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemCount: categories.length,
                       itemBuilder: (context, index) {
                         final category = categories[index];
+                        final categoryId = category['id'];
+                        final topScore = topScores[categoryId] ?? 0;
+
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    CategoryDetailPage(category: category),
+                                builder: (context) => CategoryDetailPage(
+                                  category: category,
+                                  toggleTheme: widget.toggleTheme,
+                                  changeLanguage: widget.changeLanguage,
+                                ),
                               ),
                             );
                           },
@@ -146,14 +172,29 @@ class _HomeScreenState extends State<HomeScreen> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Center(
-                              child: Text(
-                                category['name'],
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.center,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    category['name'],
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    'Top Score: $topScore',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.grey[700],
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
